@@ -4,8 +4,6 @@
 
 > WIP - Em Desenvolvimento - Matheus Sandrini Rossi
 
-## Funcionalidades / Expe
-
 ## RoadMap
 ### Engenharia de Produção
 - [ ] JIT - JIC --> Perguntas -> Gráfico de Radar -> Percentual de aderência as metodologias JIT
