@@ -9,6 +9,6 @@
 - [ ] JIT - JIC --> Perguntas -> Gráfico de Radar -> Percentual de aderência as metodologias JIT
 - [ ] GBO - Gráfico de Balanceamento Operacional --> Importar do Lean Tool's
 ### Qualidade
-- [x] Gráfico de Pareto --> Importar Lean-Tools
+- [ ] Gráfico de Pareto --> Importar Lean-Tools
 - [ ] Plano de Ação
 - [ ] Gráfico Correlação
