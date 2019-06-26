@@ -1,6 +1,10 @@
 # Lean App
 
+> Todos os conceitos e análises da metodologia Lean em um único aplicativo. Foque no gemba, deixe os calculos complexos para o Lean App.
+
 > WIP - Em Desenvolvimento - Matheus Sandrini Rossi
+
+## Funcionalidades / Expe
 
 ## RoadMap
 ### Engenharia de Produção
