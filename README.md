@@ -5,9 +5,14 @@
 > WIP - Em Desenvolvimento - Matheus Sandrini Rossi
 
 ## RoadMap
+### Login Page
+- [ ] Layout e rotas
+- [ ] Funcionalidade
 ### Engenharia de Produção
-- [ ] JIT - JIC --> Perguntas -> Gráfico de Radar -> Percentual de aderência as metodologias JIT
+- [ ] JIT JIC --> Perguntas -> Gráfico de Radar -> % de aderência as metodologias JIT
+- [ ] Takt Time - RightDrawer Calc
 - [ ] GBO - Gráfico de Balanceamento Operacional --> Importar do Lean Tool's
+- [ ] OEE - Overall Equipment Effectiveness - Eficiência
 ### Qualidade
 - [ ] Gráfico de Pareto --> Importar Lean-Tools
 - [ ] Plano de Ação
