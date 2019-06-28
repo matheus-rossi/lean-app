@@ -6,13 +6,10 @@
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
         <q-toolbar-title>
-          <q-avatar>
-
-          </q-avatar>
           Lean App
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="timer" @click="right = !right" />
+        <q-btn dense flat round icon="timer" @click="taktTimePopUp = !taktTimePopUp" />
       </q-toolbar>
     </q-header>
 
@@ -20,9 +17,9 @@
       <LeftDrawer></LeftDrawer>
     </q-drawer>
 
-    <q-drawer v-model="right" side="right" overlay behavior="mobile">
-      <RightDrawer></RightDrawer>
-    </q-drawer>
+    <q-dialog v-model="taktTimePopUp" seamless position="bottom">
+      <TaktTime></TaktTime>
+    </q-dialog>
 
     <q-page-container>
       <router-view />
@@ -33,19 +30,19 @@
 
 <script>
 import LeftDrawer from '../components/drawer/LeftDrawer.vue'
-import RightDrawer from '../components/drawer/RightDrawer.vue'
+import TaktTime from '../components/popUp/taktTIme.vue'
 
 export default {
   name: 'MyLayout',
   data () {
     return {
       left: true,
-      right: false
+      taktTimePopUp: false
     }
   },
   components: {
     LeftDrawer,
-    RightDrawer
+    TaktTime
   }
 }
 </script>
