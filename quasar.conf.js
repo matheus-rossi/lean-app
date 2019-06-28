@@ -33,15 +33,21 @@ module.exports = function (ctx) {
       // all: true, // --- includes everything; for dev only!
 
       components: [
+        'QBtn',
+        'QCard',
+        'QCardSection',
+        'QExpansionItem',
         'QLayout',
         'QHeader',
         'QDrawer',
         'QPageContainer',
         'QPage',
+        'QSeparator',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
         'QIcon',
+        'QInput',
         'QList',
         'QItem',
         'QItemSection',

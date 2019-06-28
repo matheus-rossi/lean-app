@@ -1,4 +1,3 @@
-
 <template>
   <q-layout view="hHh lpR lFr">
 
@@ -13,16 +12,16 @@
           Lean App
         </q-toolbar-title>
 
-        <q-btn dense flat round icon="menu" @click="right = !right" />
+        <q-btn dense flat round icon="timer" @click="right = !right" />
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="left" side="left" overlay behavior="mobile">
-      <!-- drawer content -->
+      <LeftDrawer></LeftDrawer>
     </q-drawer>
 
     <q-drawer v-model="right" side="right" overlay behavior="mobile">
-      <!-- drawer content -->
+      <RightDrawer></RightDrawer>
     </q-drawer>
 
     <q-page-container>
@@ -33,15 +32,20 @@
 </template>
 
 <script>
-import { openURL } from 'quasar'
+import LeftDrawer from '../components/drawer/LeftDrawer.vue'
+import RightDrawer from '../components/drawer/RightDrawer.vue'
 
 export default {
   name: 'MyLayout',
   data () {
     return {
+      left: true,
+      right: false
     }
   },
-  methods: {
+  components: {
+    LeftDrawer,
+    RightDrawer
   }
 }
 </script>
