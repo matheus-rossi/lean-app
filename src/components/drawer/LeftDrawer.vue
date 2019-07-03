@@ -6,19 +6,19 @@
         icon="settings"
         label="Eng de Produção"
       >
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple to="/app/jicjit">
           <q-item-section>
             <q-item-label>JIC x JIT</q-item-label>
             <q-item-label caption>Análise Metodologia de Produção</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple to="/app/oee">
           <q-item-section>
             <q-item-label>OEE</q-item-label>
             <q-item-label caption>Calculo de Eficiência</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple to="/app/gbo">
           <q-item-section>
             <q-item-label>GBO</q-item-label>
             <q-item-label caption>Gráfico de Balanceamento Operacional</q-item-label>

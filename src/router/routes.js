@@ -1,16 +1,18 @@
-
 const routes = [
   {
-    path: '/',
+    path: '/login',
+    component: () => import('pages/login.vue')
+  },
+  {
+    path: '/app',
     component: () => import('layouts/Layout.vue'),
     children: [
-      { path: 'app',
-        component: () => import('pages/Index.vue')
-      },
-      { path: 'login',
-        component: () => import('pages/Index.vue')
-      }
+      { path: '', component: () => import('pages/Index.vue') },
+      { path: 'jicjit', component: () => import('pages/jicjit/Jicjit.vue') }
     ]
+  },
+  {
+    path: '/', redirect: '/login'
   }
 ]
 

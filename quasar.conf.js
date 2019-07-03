@@ -35,15 +35,23 @@ module.exports = function (ctx) {
       components: [
         'QBtn',
         'QCard',
+        'QBadge',
         'QCardSection',
+        'QCardActions',
+        'QCircularProgress',
         'QDialog',
         'QExpansionItem',
         'QLayout',
         'QHeader',
         'QDrawer',
+        'QSlider',
         'QPageContainer',
         'QPage',
         'QSeparator',
+        'QStepper',
+        'QStep',
+        'QStepperNavigation',
+        'QScrollArea',
         'QToolbar',
         'QToolbarTitle',
         'QBtn',
@@ -63,7 +71,9 @@ module.exports = function (ctx) {
       // Quasar plugins
       plugins: [
         'Notify'
-      ]
+      ],
+
+      cssAddon: true
     },
 
     supportIE: false,
