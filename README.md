@@ -6,7 +6,7 @@
 
 ## RoadMap
 ### Login Page
-- [ ] Layout e rotas
+- [X] Layout e rotas
 - [ ] Funcionalidade
 ### Engenharia de Produção
 - [X] JIT JIC --> Perguntas -> Gráfico de Radar -> % de aderência as metodologias JIT
