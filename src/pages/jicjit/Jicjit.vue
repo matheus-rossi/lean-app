@@ -24,8 +24,8 @@
           >
           <q-card-section>
             <div class="row">
-              <div class="q-pr-md q-pt-md col-6" v-for="pergunta in perguntas" :key="pergunta.id">
-                {{ pergunta.texto }} - Resposta: {{ pergunta.valor }}
+              <div class="q-pr-md q-pt-md col-md-6 col-sm-12 col-xs-12" v-for="pergunta in perguntas" :key="pergunta.id">
+                {{ pergunta.texto }} - Resp: {{ pergunta.valor }}
                 <q-slider
                   v-model="pergunta.valor"
                   :min="0"

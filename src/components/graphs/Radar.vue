@@ -1,30 +1,32 @@
 <template>
-  <div class="row">
-    <div class="col">
-      <q-circular-progress
-        show-value
-        :value="adhesion"
-        size="10em"
-        :thickness="0.22"
-        color="teal"
-        track-color="grey-3"
-        class="q-ma-md"
-      > {{ adhesion }}%
-      </q-circular-progress>
+  <div class="row justify-center">
+    <div class="col-md-6 col-sm-12 q-pa-md">
+      <div class="row justify-center">
+        <q-circular-progress
+          show-value
+          :value="adhesion"
+          size="10em"
+          :thickness="0.22"
+          color="teal"
+          track-color="grey-3"
+          class="q-ma-md"
+        > {{ adhesion }}%
+        </q-circular-progress>
+      </div>
     </div>
-    <div class="col">
+    <div class="col-md-6 col-sm-12 q-pa-md">
       <q-list bordered separator>
         <q-item :active="step1" active-class="bg-teal-2 text-grey-9">
-          <q-item-section>De 0 até 30% --> Sistema de produção voltado ao Just in Case</q-item-section>
+          <q-item-section>De 0 até 30% <br> Sistema de produção voltado ao Just in Case</q-item-section>
         </q-item>
         <q-item :active="step2" active-class="bg-teal-2 text-grey-9">
-          <q-item-section>Acima de 30 até 60% --> Sistema de produção voltado ao Just in Case com iniciativas Just in Time</q-item-section>
+          <q-item-section>Acima de 30 até 60% <br> Sistema de produção voltado ao Just in Case com iniciativas Just in Time</q-item-section>
         </q-item>
         <q-item :active="step3" active-class="bg-teal-2 text-grey-9">
-          <q-item-section>Acima de 60% até 90% --> Sistema de produção voltado ao Just in Time, porém com traços Just in Case existentes</q-item-section>
+          <q-item-section>Acima de 60% até 90% <br> Sistema de produção voltado ao Just in Time, porém com traços Just in Case existentes</q-item-section>
         </q-item>
         <q-item :active="step4" active-class="bg-teal-2 text-grey-9">
-          <q-item-section>Maior que 90% --> Sistema de produção voltado ao Just in Time</q-item-section>
+          <q-item-section>Maior que 90% <br> Sistema de produção voltado ao Just in Time</q-item-section>
         </q-item>
       </q-list>
     </div>
@@ -67,4 +69,6 @@ export default {
 }
 </script>
 <style>
+  .center {
+  }
 </style>

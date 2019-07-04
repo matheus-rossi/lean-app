@@ -10,7 +10,7 @@
 - [ ] Funcionalidade
 ### Engenharia de Produção
 - [X] JIT JIC --> Perguntas -> Gráfico de Radar -> % de aderência as metodologias JIT
-- [ ] Takt Time - RightDrawer Calc
+- [X] Takt Time - PopUp
 - [ ] GBO - Gráfico de Balanceamento Operacional --> Importar do Lean Tool's
 - [ ] OEE - Overall Equipment Effectiveness - Eficiência
 ### Qualidade
