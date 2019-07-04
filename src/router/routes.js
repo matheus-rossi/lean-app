@@ -8,7 +8,8 @@ const routes = [
     component: () => import('layouts/Layout.vue'),
     children: [
       { path: '', component: () => import('pages/Index.vue') },
-      { path: 'jicjit', component: () => import('pages/jicjit/Jicjit.vue') }
+      { path: 'jicjit', component: () => import('pages/jicjit/Jicjit.vue') },
+      { path: 'oee', component: () => import('pages/oee/Oee.vue') }
     ]
   },
   {

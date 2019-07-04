@@ -10,6 +10,7 @@
         </q-toolbar-title>
 
         <q-btn dense flat round icon="timer" @click="taktTimePopUp = !taktTimePopUp" />
+        <q-btn dense flat round icon="perm_identity" @click="showUser = !showUser"/>
       </q-toolbar>
     </q-header>
 
@@ -19,6 +20,10 @@
 
     <q-dialog v-model="taktTimePopUp" seamless position="bottom">
       <TaktTime></TaktTime>
+    </q-dialog>
+
+    <q-dialog v-model="showUser">
+      <UserDialog></UserDialog>
     </q-dialog>
 
     <q-page-container>
@@ -31,18 +36,21 @@
 <script>
 import LeftDrawer from '../components/drawer/LeftDrawer.vue'
 import TaktTime from '../components/popUp/taktTIme.vue'
+import UserDialog from '../components/dialogs/User.vue'
 
 export default {
   name: 'MyLayout',
   data () {
     return {
       left: true,
-      taktTimePopUp: false
+      taktTimePopUp: false,
+      showUser: false
     }
   },
   components: {
     LeftDrawer,
-    TaktTime
+    TaktTime,
+    UserDialog
   }
 }
 </script>

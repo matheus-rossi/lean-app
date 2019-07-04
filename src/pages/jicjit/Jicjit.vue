@@ -44,12 +44,12 @@
             icon="poll"
             :done="step > 2"
           >
-            <RadarGraph
+            <ProgressJicJit
               :infoLabels=infoLabels
               :infoData=infoData
               :adhesion=adhesion
             >
-            </RadarGraph>
+            </ProgressJicJit>
           </q-step>
           <template v-slot:navigation>
             <q-stepper-navigation>
@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import RadarGraph from '../../components/graphs/Radar.vue'
+import ProgressJicJit from '../../components/graphs/ProgressJicJit.vue'
 
 export default {
   data () {
@@ -86,7 +86,7 @@ export default {
     }
   },
   components: {
-    RadarGraph
+    ProgressJicJit
   },
   methods: {
     gerarDados () {
