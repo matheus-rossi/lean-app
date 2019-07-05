@@ -1,11 +1,22 @@
 <template>
   <q-scroll-area class="fit">
     <q-list padding class="menu-list">
+      <q-item clickable
+        v-ripple
+        exact
+        to="/app">
+        <q-item-section avatar>
+          <q-icon name="home" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label>Home</q-item-label>
+          <q-item-label caption>Página Inicial</q-item-label>
+        </q-item-section>
+      </q-item>
       <q-expansion-item
         expand-separator
         icon="settings"
-        label="Eng de Produção"
-      >
+        label="Eng de Produção">
         <q-item clickable v-ripple to="/app/jicjit">
           <q-item-section>
             <q-item-label>JIC x JIT</q-item-label>

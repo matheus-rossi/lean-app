@@ -9,32 +9,31 @@
         </q-card-section>
         <q-card-section>
           <div class="row">
-            <div class="col-md-4 q-pa-sm">
+            <div class="col-md-4 col-xs-12 q-pa-sm">
               <div class="text-h6">Disponibilidade</div>
               <q-input
                 type="number"
-                label="Tempo Total Disponível"
+                label="Tempo total disponível para produzir"
                 v-model.number="avaliableTime"
                 :min="0"
               />
               <q-input
                 type="number"
-                label="Tempo Planejado"
+                label="Tempo parado programado (5S, Reuniões)"
                 v-model.number="plannedTime"
                 :min="0"
               />
               <q-input
                 type="number"
-                label="Tempo Parado"
+                label="Tempo parado não programado (Quebras, Falta Peças)"
                 v-model.number="downTime"
-                :min="0"
-              />
+                :min="0"/>
             </div>
-            <div class="col-md-4 q-pa-sm">
+            <div class="col-md-4 col-xs-12 q-pa-sm">
               <div class="text-h6">Performance</div>
               <q-input
                 type="number"
-                label="Tempo de Ciclo"
+                label="Tempo de ciclo"
                 v-model.number="processCycleTime"
                 :min="0"
               />
@@ -45,7 +44,7 @@
                 :min="0"
               />
             </div>
-            <div class="col-md-4 q-pa-sm">
+            <div class="col-md-4 col-xs-12 q-pa-sm">
               <div class="text-h6">Qualidade</div>
               <q-input
                 type="number"
@@ -63,8 +62,8 @@
               >
               </q-btn>
             </div>
-            <div class="col q-pa-sm">
-              <div class="text-h6">Resultado</div>
+            <div class="col q-pa-sm" v-show="showResult">
+              <div class="text-h6" id="focusResult">Resultado</div>
               <ProgressOee :oee="oee"></ProgressOee>
             </div>
           </div>
@@ -96,6 +95,7 @@ export default {
   },
   methods: {
     calculateOee () {
+      this.showResultFunc()
       if (this.avaliableTime === '' || this.plannedTime === '' || this.downTime === '' || this.processCycleTime === '' || this.totalProduced === '' || this.defectiveParts === '') {
         return alert('Dialog Here')
       }
@@ -105,6 +105,7 @@ export default {
       const performanceRate = this.totalProduced / (actualUptime / this.processCycleTime)
       const qualityRate = this.defectiveParts / this.totalProduced
       this.oee = Math.floor((avaliableRate * performanceRate * (1 - qualityRate)) * 100)
+      this.focusResult()
     },
     resetCalc () {
       this.avaliableTime = ''
@@ -115,6 +116,12 @@ export default {
       this.defectiveParts = ''
       this.buttonReset = false
       this.showResult = false
+    },
+    focusResult () {
+      document.getElementById('focusResult').scrollIntoView()
+    },
+    showResultFunc () {
+      this.showResult = true
     }
   }
 }

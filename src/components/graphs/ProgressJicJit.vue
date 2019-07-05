@@ -61,10 +61,14 @@ export default {
       } else {
         this.step4 = true
       }
+    },
+    focusTop () {
+      window.scrollTo(0, 0)
     }
   },
   mounted () {
     this.defineAdhesion()
+    this.focusTop()
   }
 }
 </script>

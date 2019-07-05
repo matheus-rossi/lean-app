@@ -1,14 +1,18 @@
 <template>
-  <q-page class="flex flex-center">
-
+  <q-page class="row justify-center items-center">
+    <div class="col-6">
+      <q-img
+        src="../statics/main-logo.png"
+      />
+    </div>
   </q-page>
 </template>
-
-<style>
-</style>
 
 <script>
 export default {
   name: 'PageIndex'
 }
 </script>
+
+<style>
+</style>
