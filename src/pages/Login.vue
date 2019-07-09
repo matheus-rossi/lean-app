@@ -1,12 +1,12 @@
 <template>
   <q-layout class="bg-grey-3">
     <div class="row justify-center" style="padding-top: 25vh">
-      <div class="row items-center justify-center col-md-4 col-sm-6 col-xs-8 bg-primary text-center text-white">
-        <div class="text-h6">
+      <div class="row items-center justify-center col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-primary text-center text-white">
+        <div class="text-h6 q-ma-lg">
           LeanApp
         </div>
       </div>
-      <div class="col-md-4 col-sm-8 col-xs-8 bg-white">
+      <div class="col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-white">
         <br>
         <br>
         <div>
@@ -61,7 +61,7 @@ export default {
       if (this.user === 'matheus' && this.password === 'rossi') {
         this.$router.push('/app')
       } else {
-        Notify.create('Senha ou usuário incorretos')
+        Notify.create('Senha ou usuário incorretos!')
       }
     }
   }
