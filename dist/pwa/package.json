@@ -5,6 +5,7 @@
     "author": "Matheus S Rossi",
     "private": true,
     "scripts": {
+      "start": "node index.js",
       "postinstall": "npm install express"
     }
    }
