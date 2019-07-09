@@ -12,8 +12,8 @@
 ### Engenharia de Produção
 - [X] JIT JIC --> Nível de aderência as metodologias
 - [X] Takt Time --> Calculadora TaktTime simples
-- [ ] GBO --> Gráfico de Balanceamento Operacional
 - [X] OEE --> Overall Equipment Effectiveness - Cálculo de Eficiência
+- [ ] GBO --> Gráfico de Balanceamento Operacional
 ### Qualidade
 - [ ] Gráfico de Pareto --> Análise 80/20
 - [ ] Plano de Ação --> 5w2h
