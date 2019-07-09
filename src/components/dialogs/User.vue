@@ -6,7 +6,8 @@
       </q-card-section>
       <q-card-section>
         Usuário: {{ userName }} <br>
-        Tipo: {{ userType }}
+        Tipo: {{ userType }} <br>
+        Contato: {{ userEmail }}
       </q-card-section>
       <q-card-actions align="right">
         <q-btn flat label="OK" color="primary" v-close-popup />
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   data () {
@@ -23,12 +25,7 @@ export default {
     }
   },
   computed: {
-    userName () {
-      return this.$store.getters['userData/userName']
-    },
-    userType () {
-      return this.$store.getters['userData/userType']
-    }
+    ...mapGetters('userData', ['userName', 'userType', 'userEmail'])
   }
 }
 </script>

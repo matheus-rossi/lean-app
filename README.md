@@ -4,16 +4,17 @@
 
 > WIP - Em Desenvolvimento - Matheus Sandrini Rossi
 
-## RoadMap
+## Features
 ### Login Page
-- [X] Layout e rotas
+- [X] Layout
+- [X] Rotas
 - [ ] Funcionalidade
 ### Engenharia de Produção
-- [X] JIT JIC --> Perguntas -> Gráfico de Radar -> % de aderência as metodologias JIT
-- [X] Takt Time - PopUp
-- [ ] GBO - Gráfico de Balanceamento Operacional --> Importar do Lean Tool's
-- [ ] OEE - Overall Equipment Effectiveness - Eficiência
+- [X] JIT JIC --> Nível de aderência as metodologias
+- [X] Takt Time --> Calculadora TaktTime simples
+- [ ] GBO --> Gráfico de Balanceamento Operacional
+- [X] OEE --> Overall Equipment Effectiveness - Cálculo de Eficiência
 ### Qualidade
-- [ ] Gráfico de Pareto --> Importar Lean-Tools
-- [ ] Plano de Ação
-- [ ] Gráfico Correlação
+- [ ] Gráfico de Pareto --> Análise 80/20
+- [ ] Plano de Ação --> 5w2h
+- [ ] Gráfico Correlação --> Relação entre duas variáveis

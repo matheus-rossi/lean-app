@@ -17,6 +17,22 @@ const routes = [
   }
 ]
 
+// QUando implementar sistema de login, utilizar a metodologia abaixo para controle de rotas.
+
+// router.beforeEach((to, from, next) => {
+//   if (to.path !== '/login') {
+//     let token = localStorage.getItem('token')
+//     if (token) {
+//       next()
+//     }
+//     else {
+//       this.$router.push({ name: 'login' })
+//       next()
+//     }
+//   }
+//   next()
+// })
+
 // Always leave this as last one
 if (process.env.MODE !== 'ssr') {
   routes.push({

@@ -10,7 +10,7 @@
         <q-card-section>
           <div class="row">
             <div class="col-md-4 col-xs-12 q-pa-sm">
-              <div class="text-h6">Disponibilidade</div>
+              <div class="text-h6">Disponibilidade (min)</div>
               <q-input
                 type="number"
                 label="Tempo total disponível para produzir"
@@ -30,7 +30,7 @@
                 :min="0"/>
             </div>
             <div class="col-md-4 col-xs-12 q-pa-sm">
-              <div class="text-h6">Performance</div>
+              <div class="text-h6">Performance (min)</div>
               <q-input
                 type="number"
                 label="Tempo de ciclo"
@@ -64,7 +64,7 @@
             </div>
             <div class="col q-pa-sm" v-show="showResult">
               <div class="text-h6" id="focusResult">Resultado</div>
-              <ProgressOee :oee="oee"></ProgressOee>
+              <ProgressOee :oeeCalculed="oee"></ProgressOee>
             </div>
           </div>
         </q-card-section>
@@ -106,16 +106,6 @@ export default {
       const qualityRate = this.defectiveParts / this.totalProduced
       this.oee = Math.floor((avaliableRate * performanceRate * (1 - qualityRate)) * 100)
       this.focusResult()
-    },
-    resetCalc () {
-      this.avaliableTime = ''
-      this.plannedTime = ''
-      this.downTime = ''
-      this.processCycleTime = ''
-      this.totalProduced = ''
-      this.defectiveParts = ''
-      this.buttonReset = false
-      this.showResult = false
     },
     focusResult () {
       document.getElementById('focusResult').scrollIntoView()

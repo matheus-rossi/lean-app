@@ -4,13 +4,13 @@
       <div class="row justify-center">
         <q-circular-progress
           show-value
-          :value="oee"
+          :value="oeeCalculed"
           size="10em"
           :thickness="0.22"
           color="teal"
           track-color="grey-3"
           class="q-ma-md"
-        > {{ oee }}%
+        > {{ oeeCalculed }}%
         </q-circular-progress>
       </div>
     </div>
@@ -38,31 +38,33 @@
 export default {
   name: 'oeeGraph',
   props: [
-    'oee'
+    'oeeCalculed'
   ],
   data () {
     return {
       step1: false,
       step2: false,
       step3: false,
-      step4: false
+      step4: false,
+      vShow: false
     }
   },
-  methods: {
-    defineOee () {
-      if (this.oee <= 30) {
+  watch: {
+    oeeCalculed: function (val) {
+      if (this.oeeCalculed <= 30) {
         this.step1 = true
-      } else if (this.oee <= 60) {
+        this.step2 = this.step3 = this.step4 = false
+      } else if (this.oeeCalculed <= 60) {
         this.step2 = true
-      } else if (this.oee <= 90) {
+        this.step1 = this.step3 = this.step4 = false
+      } else if (this.oeeCalculed <= 90) {
         this.step3 = true
+        this.step1 = this.step2 = this.step4 = false
       } else {
         this.step4 = true
+        this.step1 = this.step2 = this.step3 = false
       }
     }
-  },
-  mounted () {
-    this.defineOee()
   }
 }
 </script>
