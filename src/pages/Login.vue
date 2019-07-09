@@ -61,7 +61,10 @@ export default {
       if (this.user === 'matheus' && this.password === 'rossi') {
         this.$router.push('/app')
       } else {
-        Notify.create('Senha ou usuário incorretos!')
+        Notify.create({
+          message: 'Usuário: matheus e Senha: rossi',
+          color: 'orange'
+        })
       }
     }
   }

@@ -9,55 +9,37 @@
             Análise JIC x JIT
           </div>
         </q-card-section>
-        <q-stepper
-          v-model="step"
-          ref="stepper"
-          color="primary"
-          animated
-          class="col"
-        >
-          <q-step
-            :name="1"
-            title="Informe os dados solicitados"
-            icon="settings"
-            :done="step > 1"
-          >
-          <q-card-section>
-            <div class="row">
-              <div class="q-pr-md q-pt-md col-md-6 col-sm-12 col-xs-12" v-for="pergunta in perguntas" :key="pergunta.id">
-                {{ pergunta.texto }} - Resp: {{ pergunta.valor }}
-                <q-slider
-                  v-model="pergunta.valor"
-                  :min="0"
-                  :max="10"
-                  :step="1"
-                  label
-                  color="light-blue"
-                />
-              </div>
+        <q-card-section>
+          <div class="row">
+            <div class="q-pr-md q-pt-md col-md-6 col-sm-12 col-xs-12" v-for="pergunta in perguntas" :key="pergunta.id">
+              {{ pergunta.texto }} - Resp: {{ pergunta.valor }}
+              <q-slider
+                v-model="pergunta.valor"
+                :min="0"
+                :max="10"
+                :step="1"
+                label
+                color="light-blue"
+              />
             </div>
-          </q-card-section>
-          </q-step>
-          <q-step
-            :name="2"
-            title="Resultado"
-            icon="poll"
-            :done="step > 2"
-          >
-            <ProgressJicJit
-              :infoLabels=infoLabels
-              :infoData=infoData
-              :adhesion=adhesion
+          </div>
+          <div class="col-12">
+            <q-btn
+              color="primary"
+              @click="adhesionCalc"
+              class="btn-right-drawer items-center col"
+              label="Calcular"
             >
-            </ProgressJicJit>
-          </q-step>
-          <template v-slot:navigation>
-            <q-stepper-navigation>
-              <q-btn @click="gerarDados()" color="primary" v-show="step === 1" label="Prox. Passo"/>
-              <q-btn v-if="step > 1" color="primary" @click="$refs.stepper.previous()" label="Retornar" />
-            </q-stepper-navigation>
-          </template>
-        </q-stepper>
+            </q-btn>
+          </div>
+          <ProgressJicJit
+            :infoLabels=infoLabels
+            :infoData=infoData
+            :adhesion=adhesion
+            v-show="showResult"
+          >
+          </ProgressJicJit>
+        </q-card-section>
       </q-card>
     </div>
   </div>
@@ -78,19 +60,18 @@ export default {
         { texto: 'Nível de defeitos tolerados?', valor: 0, id: 6 },
         { texto: 'Produção é empurrada ?', valor: 0, id: 7 }
       ],
-      step: 1,
       infoLabels: [],
       infoData: [],
       sumNotes: 0,
-      adhesion: 0
+      adhesion: 0,
+      showResult: false
     }
   },
   components: {
     ProgressJicJit
   },
   methods: {
-    gerarDados () {
-      this.$refs.stepper.next()
+    adhesionCalc () {
       this.infoLabels = this.perguntas.map((elm) => {
         return elm.texto
       })
@@ -101,6 +82,10 @@ export default {
         return prevElm + elm.valor
       }, 0)
       this.adhesion = Math.round(((this.sumNotes / 70) * 100))
+      this.showResultFunc()
+    },
+    showResultFunc () {
+      this.showResult = true
     }
   }
 }

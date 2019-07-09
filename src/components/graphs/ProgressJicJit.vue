@@ -50,25 +50,22 @@ export default {
       step4: false
     }
   },
-  methods: {
-    defineAdhesion () {
+  watch: {
+    adhesion: function (val) {
       if (this.adhesion <= 30) {
         this.step1 = true
+        this.step2 = this.step3 = this.step4 = false
       } else if (this.adhesion <= 60) {
         this.step2 = true
+        this.step1 = this.step3 = this.step4 = false
       } else if (this.adhesion <= 90) {
         this.step3 = true
+        this.step1 = this.step2 = this.step4 = false
       } else {
         this.step4 = true
+        this.step1 = this.step2 = this.step3 = false
       }
-    },
-    focusTop () {
-      window.scrollTo(0, 0)
     }
-  },
-  mounted () {
-    this.defineAdhesion()
-    this.focusTop()
   }
 }
 </script>

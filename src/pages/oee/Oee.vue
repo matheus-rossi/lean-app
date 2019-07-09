@@ -105,10 +105,6 @@ export default {
       const performanceRate = this.totalProduced / (actualUptime / this.processCycleTime)
       const qualityRate = this.defectiveParts / this.totalProduced
       this.oee = Math.floor((avaliableRate * performanceRate * (1 - qualityRate)) * 100)
-      this.focusResult()
-    },
-    focusResult () {
-      document.getElementById('focusResult').scrollIntoView()
     },
     showResultFunc () {
       this.showResult = true
