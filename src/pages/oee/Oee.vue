@@ -102,7 +102,7 @@ export default {
       const scheduled = this.avaliableTime - this.plannedTime
       const avaliableRate = (scheduled - this.downTime) / scheduled
       const actualUptime = scheduled - this.downTime
-      const performanceRate = this.totalProduced / (actualUptime / this.processCycleTime)
+      const performanceRate = actualUptime / scheduled
       const qualityRate = this.defectiveParts / this.totalProduced
       this.oee = Math.floor((avaliableRate * performanceRate * (1 - qualityRate)) * 100)
     },
