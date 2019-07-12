@@ -1,12 +1,12 @@
 <template>
   <q-layout class="bg-grey-3">
     <div class="row justify-center" style="padding-top: 25vh">
-      <div class="row items-center justify-center col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-primary text-center text-white">
+      <div class="row items-center justify-center col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-primary text-center text-white rounded-borders">
         <div class="text-h6 q-ma-lg">
           LeanApp
         </div>
       </div>
-      <div class="col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-white">
+      <div class="col-lg-2 col-md-3 col-sm-8 col-xs-8 bg-white rounded-borders">
         <br>
         <br>
         <div>

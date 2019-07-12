@@ -52,13 +52,14 @@ export default {
   data () {
     return {
       perguntas: [
-        { texto: 'Produção em grandes lotes ?', valor: 0, id: 1 },
-        { texto: 'Estoques elevados ?', valor: 0, id: 2 },
-        { texto: 'Lead-times elevados ?', valor: 0, id: 3 },
-        { texto: 'Layout funcional ?', valor: 0, id: 4 },
-        { texto: 'Mão de obra flexível?', valor: 0, id: 5 },
-        { texto: 'Nível de defeitos tolerados?', valor: 0, id: 6 },
-        { texto: 'Produção é empurrada ?', valor: 0, id: 7 }
+        { texto: 'Produção JIC x JIT?', valor: 0, id: 1 },
+        { texto: 'Estoques JIC x JIT?', valor: 0, id: 2 },
+        { texto: 'Lead-times JIC x JIT?', valor: 0, id: 3 },
+        { texto: 'Layout JIC x JIT?', valor: 0, id: 4 },
+        { texto: 'Planejamento e Controle JIC x JIT?', valor: 0, id: 6 },
+        { texto: 'Mão de obra JIC x JIT?', valor: 0, id: 6 },
+        { texto: 'Nível de defeitos tolerados JIC x JIT?', valor: 0, id: 7 },
+        { texto: 'Sistema de Produção JIC x JIT?', valor: 0, id: 8 }
       ],
       infoLabels: [],
       infoData: [],
