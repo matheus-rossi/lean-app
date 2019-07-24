@@ -32,25 +32,17 @@
         </div>
       </q-card-section>
       <q-card-section>
-        <q-card-separator class="separator-pad" />
-          <div id="chart"></div>
-        <div class="row uppercase text-bold table-header">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 text-center">
-            <p class="no-margin">#Process</p>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-3 col-xs-3 text-center">
-            <p class="no-margin">Desc</p>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
-            <p class="no-margin">Lowest Cycle</p>
-          </div>
-        </div>
-        <div class="q-pa-md">
+        <div id="chart"></div>
+        <div class="q-pa-xs">
           <q-table
             title="Folha de Processo"
-            :data="data"
+            :data="obc"
             :columns="columns"
-            row-key="name"
+            :pagination.sync="pagination"
+            :pagination-label="getPaginationLabel"
+            :rows-per-page-options="[0,25,50,100]"
+            no-data-label="Sem Dados"
+            rows-per-page-label="Linhas por Página"
             />
           </div>
       </q-card-section>
@@ -82,24 +74,27 @@ export default {
         { takt: 90, cycle: 80, processId: 'Inspeção', processName: 'Inspeção', lowRepCycle: 47 }
       ],
       chartData: [],
+      pagination: {
+        rowsPerPage: 0
+      },
       columns: [
         {
           name: 'centroTrabalho',
           label: 'Centro Trabalho',
-          field: 'name',
+          field: 'processId',
           align: 'left',
           sortable: true
         },
         {
           name: 'operacao',
           label: 'Operação',
-          field: 'calories',
+          field: 'processName',
           sortable: true
         },
         {
           name: 'tempo',
           label: 'Tempo (min)',
-          field: 'fat',
+          field: 'lowRepCycle',
           sortable: true
         }
       ]
@@ -126,6 +121,9 @@ export default {
       this.chartData = this.obcCalculation(this.obc)
       this.chart()
       this.show = true
+    },
+    getPaginationLabel (firstRowIndex, endRowIndex, totalRowsNumber) {
+      return `${firstRowIndex}-${endRowIndex} de ${totalRowsNumber}`
     },
     obcCalculation (obc) {
       const firstCol = [
