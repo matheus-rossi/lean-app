@@ -5,7 +5,7 @@
         <div class="text-h6" >GBO - Gráfico de Balanceamento Operacional</div>
       </q-card-section>
       <q-card-section>
-        <div>Insira as informações solicitadas abaixo:</div>
+        <div class="q-pa-xs">Insira as informações solicitadas abaixo:</div>
         <div class="row">
           <div class="col-6">
             <q-input v-model.number="takt" class="q-pa-xs" type="number" :min="0" label="Takt Time" />
@@ -52,7 +52,7 @@
 
 <script>
 import c3 from 'c3'
-import _ from 'lodash'
+import obcMethods from '../../helpers/obc/obcCalculation.js'
 
 export default {
   name: 'obc',
@@ -108,7 +108,7 @@ export default {
   methods: {
     addOperator () {
       if (this.takt === null || this.cycle === null || this.processName === '' || this.processId === '' || this.lowRepCycle === null) {
-        return alert('Missing fields to complete!')
+        return alert('Campos Obrigatórios Vazios')
       }
       let newObc = {
         takt: this.takt,
@@ -126,51 +126,7 @@ export default {
       return `${firstRowIndex}-${endRowIndex} de ${totalRowsNumber}`
     },
     obcCalculation (obc) {
-      const firstCol = [
-        ['x']
-      ]
-      const secondCol = [
-        ['# Processo']
-      ]
-      const thirdCol = [
-        ['Takt']
-      ]
-      const fourthCol = [
-        ['Ciclo']
-      ]
-      const processIdUniqArray = _.uniq(obc.map(proc => proc.processId))
-      const finalFirstCol = _.flattenDeep(firstCol.concat(processIdUniqArray))
-      const groups = []
-      for (let i = 0; i < processIdUniqArray.length; i++) {
-        const processByBox = obc
-          .filter(proc => proc.processId === processIdUniqArray[i])
-          .map(proc => proc.lowRepCycle)
-          .reduce((acc, curr) => acc + curr)
-        groups.push(processByBox)
-      }
-      const finalSecondCol = _.flattenDeep(secondCol.concat(groups))
-      const almostFinalThirdCol = []
-      const almostFinalFourthCol = []
-      for (let i = 0; i < processIdUniqArray.length; i++) {
-        const processByBox = obc
-          .filter(proc => proc.processId === processIdUniqArray[i])
-          .map(proc => proc.takt)
-        almostFinalThirdCol.push(_.uniq(processByBox))
-      }
-      const finalThirdCol = thirdCol.concat(_.flattenDeep(almostFinalThirdCol))
-      for (let i = 0; i < processIdUniqArray.length; i++) {
-        const processByBox = obc
-          .filter(proc => proc.processId === processIdUniqArray[i])
-          .map(proc => proc.cycle)
-        almostFinalFourthCol.push(_.uniq(processByBox))
-      }
-      const finalFourthCol = fourthCol.concat(_.flattenDeep(almostFinalFourthCol))
-      return {
-        finalFirstCol,
-        finalSecondCol,
-        finalThirdCol,
-        finalFourthCol
-      }
+      return obcMethods.obcCalc(obc)
     },
     cleanData () {
       this.processId = ''
