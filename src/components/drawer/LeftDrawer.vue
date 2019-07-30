@@ -42,7 +42,7 @@
         icon="poll"
         label="Qualidade"
       >
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple to="/app/pareto">
           <q-item-section>
             <q-item-label>Análise de Pareto</q-item-label>
             <q-item-label caption>80 / 20</q-item-label>
