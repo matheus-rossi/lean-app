@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.8abefaf904fee738124ccf564f96db45.js"
+  "precache-manifest.a7d44a0c6a19be26e6f1cd57f2ac39d1.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "lean-app"});
