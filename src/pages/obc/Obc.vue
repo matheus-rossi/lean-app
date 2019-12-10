@@ -29,6 +29,9 @@
         <div class="button-obc">
           <q-btn color="primary" class="q-ma-xs" @click="addOperator">Adicionar Operação</q-btn>
           <q-btn color="primary" class="q-ma-xs" @click="cleanData">Limpar Dados</q-btn>
+          <q-input type="file" @change="onChangeXlsx"/>
+          <xlsx-read :file="file">
+          </xlsx-read>
         </div>
       </q-card-section>
       <q-card-section>
@@ -53,9 +56,14 @@
 <script>
 import c3 from 'c3'
 import obcMethods from '../../helpers/obc/obcCalculation.js'
+import { XlsxRead } from 'vue-xlsx'
+import XLSX from 'xlsx'
 
 export default {
   name: 'obc',
+  components: {
+    XlsxRead
+  },
   data () {
     return {
       show: false,
@@ -74,6 +82,7 @@ export default {
         { takt: 90, cycle: 80, processId: 'Inspeção', processName: 'Inspeção', lowRepCycle: 47 }
       ],
       chartData: [],
+      file: '',
       pagination: {
         rowsPerPage: 0
       },
@@ -159,6 +168,9 @@ export default {
               'takt': 'y2'
             }
           },
+          legend: {
+            position: 'right'
+          },
           axis: {
             x: {
               type: 'category'
@@ -166,6 +178,24 @@ export default {
           }
         })
       }, 50)
+    },
+    onChangeXlsx (e) {
+      const files = e.target.files, f = files[0]
+      const reader = new FileReader()
+      const vm = this
+      reader.onload = function (e) {
+        const data = new Uint8Array(e.target.result)
+        const workbook = XLSX.read(data, { type: 'array' })
+        const jsonXlsx = XLSX.utils.sheet_to_json(workbook.Sheets.Planilha1)
+        vm.obc = jsonXlsx
+      }
+      reader.readAsArrayBuffer(f)
+    }
+  },
+  watch: {
+    obc: function (val) {
+      this.chartData = this.obcCalculation(this.obc)
+      this.chart()
     }
   }
 }

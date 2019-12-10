@@ -11,7 +11,9 @@ const routes = [
       { path: 'jicjit', component: () => import('pages/jicjit/Jicjit.vue') },
       { path: 'oee', component: () => import('pages/oee/Oee.vue') },
       { path: 'obc', component: () => import('pages/obc/Obc.vue') },
-      { path: 'pareto', component: () => import('pages/pareto/Pareto.vue') }
+      { path: 'pareto', component: () => import('pages/pareto/Pareto.vue') },
+      { path: 'shingo', component: () => import('pages/shingo/Shingo.vue') },
+      { path: 'trf', component: () => import('pages/trf/Trf.vue') }
     ]
   },
   {
