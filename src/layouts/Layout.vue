@@ -42,7 +42,7 @@ export default {
   name: 'MyLayout',
   data () {
     return {
-      left: true,
+      left: false,
       taktTimePopUp: false,
       showUser: false
     }

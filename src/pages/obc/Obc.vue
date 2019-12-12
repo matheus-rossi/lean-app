@@ -29,9 +29,10 @@
         <div class="button-obc">
           <q-btn color="primary" class="q-ma-xs" @click="addOperator">Adicionar Operação</q-btn>
           <q-btn color="primary" class="q-ma-xs" @click="cleanData">Limpar Dados</q-btn>
-          <q-input type="file" @change="onChangeXlsx"/>
-          <xlsx-read :file="file">
-          </xlsx-read>
+          <q-btn color="primary" class="q-ma-xs" @click="$refs.importFile.$el.click()">
+            <q-input ref="importFile" type="file" @change="onChangeXlsx" style="display:none;"/>
+            Importar Dados
+          </q-btn>
         </div>
       </q-card-section>
       <q-card-section>
@@ -56,14 +57,10 @@
 <script>
 import c3 from 'c3'
 import obcMethods from '../../helpers/obc/obcCalculation.js'
-import { XlsxRead } from 'vue-xlsx'
 import XLSX from 'xlsx'
 
 export default {
   name: 'obc',
-  components: {
-    XlsxRead
-  },
   data () {
     return {
       show: false,
@@ -173,7 +170,12 @@ export default {
           },
           axis: {
             x: {
-              type: 'category'
+              type: 'category',
+              tick: {
+                rotate: 75,
+                multiline: false
+              },
+              height: 150
             }
           }
         })
