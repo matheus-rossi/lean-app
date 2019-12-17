@@ -30,7 +30,9 @@
           <q-btn color="primary" class="q-ma-xs" @click="addOperator">Adicionar Operação</q-btn>
           <q-btn color="primary" class="q-ma-xs" @click="cleanData">Limpar Dados</q-btn>
           <q-btn color="primary" class="q-ma-xs" @click="$refs.importFile.$el.click()">
-            <q-input ref="importFile" type="file" @change="onChangeXlsx" style="display:none;"/>
+            <form id="form">
+              <q-input ref="importFile" type="file" @change="onChangeXlsx" style="display:none;"/>
+            </form>
             Importar Dados
           </q-btn>
         </div>
@@ -143,6 +145,7 @@ export default {
       this.obc = []
       this.chartData = []
       this.show = false
+      document.getElementById('form').reset()
     },
     chart () {
       setTimeout(() => {
