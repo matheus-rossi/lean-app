@@ -7,11 +7,11 @@
       <q-card-section>
         <div class="row">
           <div class="col-md-6 col-xs-12 q-pa-sm">
-            <q-input class="margin-min" v-model="problem" type="text" ref="inputone" label="Descrição da Ocorrência"/>
+            <q-input filled class="margin-min" v-model="problem" type="text" ref="inputone" label="Descrição da Ocorrência"/>
           </div>
           <div class="col-md-2 col-xs-12 q-pa-sm">
             <div class="wid-qtd">
-              <q-input class="margin-min" v-model.number="qtd" type="number" label="Quantidade" />
+              <q-input filled class="margin-min" v-model.number="qtd" type="number" label="Quantidade" />
             </div>
           </div>
         </div>

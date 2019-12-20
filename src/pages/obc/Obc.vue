@@ -8,21 +8,21 @@
         <div class="q-pa-xs">Insira as informações solicitadas abaixo:</div>
         <div class="row">
           <div class="col-6">
-            <q-input v-model.number="takt" class="q-pa-xs" type="number" :min="0" label="Takt Time" />
+            <q-input filled v-model.number="takt" class="q-pa-xs" type="number" :min="0" label="Takt Time" />
           </div>
           <div class="col-6">
-            <q-input v-model.number="cycle" class="q-pa-xs" type="number" :min="0" :max="100" label="Tempo de Ciclo" />
+            <q-input filled v-model.number="cycle" class="q-pa-xs" type="number" :min="0" :max="100" label="Tempo de Ciclo" />
           </div>
         </div>
         <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <q-input class="q-pa-xs" v-model="processId" type="text" label="Centro de Trabalho"/>
+            <q-input filled class="q-pa-xs" v-model="processId" type="text" label="Centro de Trabalho"/>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-            <q-input v-model="processName" type="text" class="q-pa-xs" label="Descrição da Etapa" />
+            <q-input filled v-model="processName" type="text" class="q-pa-xs" label="Descrição da Etapa" />
           </div>
           <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-            <q-input v-model.number="lowRepCycle" type="number" :min="0" class="q-pa-xs" label="Tempo da Operação" />
+            <q-input filled v-model.number="lowRepCycle" type="number" :min="0" class="q-pa-xs" label="Tempo da Operação" />
           </div>
         </div>
         <br>

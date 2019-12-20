@@ -57,9 +57,9 @@ export default {
         { texto: 'Lead-times JIC x JIT?', valor: 0, id: 3 },
         { texto: 'Layout JIC x JIT?', valor: 0, id: 4 },
         { texto: 'Planejamento e Controle JIC x JIT?', valor: 0, id: 6 },
-        { texto: 'Mão de obra JIC x JIT?', valor: 0, id: 6 },
-        { texto: 'Nível de defeitos tolerados JIC x JIT?', valor: 0, id: 7 },
-        { texto: 'Sistema de Produção JIC x JIT?', valor: 0, id: 8 }
+        { texto: 'Mão de obra JIC x JIT?', valor: 0, id: 7 },
+        { texto: 'Nível de defeitos tolerados JIC x JIT?', valor: 0, id: 8 },
+        { texto: 'Sistema de Produção JIC x JIT?', valor: 0, id: 9 }
       ],
       infoLabels: [],
       infoData: [],

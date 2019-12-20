@@ -13,18 +13,24 @@
               <div class="text-h6">Disponibilidade (min)</div>
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Tempo total disponível para produzir"
                 v-model.number="avaliableTime"
                 :min="0"
               />
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Tempo parado programado (5S, Reuniões)"
                 v-model.number="plannedTime"
                 :min="0"
               />
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Tempo parado não programado (Quebras, Falta Peças)"
                 v-model.number="downTime"
                 :min="0"/>
@@ -33,12 +39,16 @@
               <div class="text-h6">Performance (min)</div>
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Tempo de ciclo"
                 v-model.number="processCycleTime"
                 :min="0"
               />
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Quantidade total produzida"
                 v-model.number="totalProduced"
                 :min="0"
@@ -48,6 +58,8 @@
               <div class="text-h6">Qualidade</div>
               <q-input
                 type="number"
+                class="q-pa-xs"
+                filled
                 label="Qtd peças não conformes"
                 v-model.number="defectiveParts"
                 :min="0"
