@@ -101,7 +101,7 @@ export default {
         },
         {
           name: 'tempo',
-          label: 'Tempo (min)',
+          label: 'Tempo',
           field: 'lowRepCycle',
           sortable: true
         }
@@ -169,7 +169,7 @@ export default {
             }
           },
           legend: {
-            position: 'right'
+            position: 'inset'
           },
           axis: {
             x: {

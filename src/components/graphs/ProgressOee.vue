@@ -7,8 +7,8 @@
           :value="oeeCalculed"
           size="10em"
           :thickness="0.22"
-          color="teal"
-          track-color="grey-3"
+          color="blue"
+          track-color="light-blue-1"
           class="q-ma-md"
         > {{ oeeCalculed }}%
         </q-circular-progress>
@@ -16,16 +16,16 @@
     </div>
     <div class="col-md-6 col-sm-12 q-pa-md">
       <q-list bordered separator>
-        <q-item :active="step1" active-class="bg-teal-2 text-grey-9">
+        <q-item :active="step1" active-class="bg-light-blue-1 text-grey-9">
           <q-item-section>De 0 até 30% <br> Sistema de produção com performance baixa</q-item-section>
         </q-item>
-        <q-item :active="step2" active-class="bg-teal-2 text-grey-9">
+        <q-item :active="step2" active-class="bg-light-blue-1 text-grey-9">
           <q-item-section>Acima de 30 até 60% <br> Sistema de produção com performance normal</q-item-section>
         </q-item>
-        <q-item :active="step3" active-class="bg-teal-2 text-grey-9">
+        <q-item :active="step3" active-class="bg-light-blue-1 text-grey-9">
           <q-item-section>Acima de 60% até 90% <br> Sistema de produção com performance alta</q-item-section>
         </q-item>
-        <q-item :active="step4" active-class="bg-teal-2 text-grey-9">
+        <q-item :active="step4" active-class="bg-light-blue-1 text-grey-9">
           <q-item-section>Maior que 90% <br> Sistema de produção com performance excelente</q-item-section>
         </q-item>
       </q-list>

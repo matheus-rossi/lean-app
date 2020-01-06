@@ -39,27 +39,28 @@
                   {label: 'Sim', value: '1'},
                   {label: 'Não', value: '2'}
                 ]"
-              label="Deve ser Externo?"
+              label="Pode ser Externo?"
             />
           </div>
         </div>
         <br>
         <div class="button-obc">
           <q-btn color="primary" class="q-ma-xs" @click="addActivity">Adicionar Operação</q-btn>
-          <q-btn color="primary" class="q-ma-xs">Limpar Dados</q-btn>
+          <q-btn color="primary" class="q-ma-xs" @click="cleanData">Limpar Dados</q-btn>
           <q-btn color="primary" class="q-ma-xs" @click="$refs.importFile.$el.click()">
             <form id="form">
               <q-input ref="importFile" type="file" @change="onChangeXlsx" style="display:none;"/>
             </form>
             Importar Dados
           </q-btn>
-          <q-btn color="primary" class="q-ma-xs" @click="calculateTrf">Calcular TRF</q-btn>
+          <!-- <q-btn color="primary" class="q-ma-xs" @click="calculateTrf">Calcular TRF</q-btn> -->
         </div>
       </q-card-section>
       <q-card-section>
         <ProgressTrf
           :gainMin=gainMin
           :gainPercent=gainPercent
+          v-show="showTrf"
         >
         </ProgressTrf>
         <div class="q-pa-xs">
@@ -101,6 +102,7 @@ export default {
       importFile: '',
       gainMin: 0,
       gainPercent: 0,
+      showTrf: false,
       pagination: {
         rowsPerPage: 0
       },
@@ -132,7 +134,7 @@ export default {
         },
         {
           name: 'couldBeExternal',
-          label: 'Pode ser Externalizado?',
+          label: 'Pode ser externo?',
           field: 'couldBeExternal',
           sortable: true
         }
@@ -154,16 +156,18 @@ export default {
         operationTime: this.operationTime
       }
       this.setupList.push(newOperation)
+      this.calculateTrf()
     },
     onChangeXlsx (e) {
       const files = e.target.files, f = files[0]
       const reader = new FileReader()
-      const vm = this
+      const vue = this
       reader.onload = function (e) {
         const data = new Uint8Array(e.target.result)
         const workbook = XLSX.read(data, { type: 'array' })
         const jsonXlsx = XLSX.utils.sheet_to_json(workbook.Sheets.Planilha1)
-        vm.obc = jsonXlsx
+        vue.setupList = jsonXlsx
+        vue.calculateTrf()
       }
       reader.readAsArrayBuffer(f)
     },
@@ -175,12 +179,28 @@ export default {
         return prevElm + elm.operationTime
       }, 0)
       const timeCouldBeExternalActivities = this.setupList.filter((elm) => {
-        return elm.idCouldBeExternal === '1'
+        return elm.idCouldBeExternal === 1 && elm.idSetupClass === 1
       }).reduce((prevElm, elm, index) => {
         return prevElm + elm.operationTime
       }, 0)
       this.gainPercent = Math.round((timeCouldBeExternalActivities / totalTime) * 100)
       this.gainMin = totalTime - timeCouldBeExternalActivities
+      this.showTrf = true
+    },
+    cleanData () {
+      this.sequence = ''
+      this.activity = ''
+      this.setupClass = ''
+      this.idSetupClass = ''
+      this.couldBeExternal = ''
+      this.idCouldBeExternal = ''
+      this.operationTime = ''
+      this.setupList = []
+      this.importFile = ''
+      this.gainMin = 0
+      this.gainPercent = 0
+      this.showTrf = false
+      document.getElementById('form').reset()
     }
   }
 }
