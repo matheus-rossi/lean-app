@@ -10,11 +10,14 @@
 - [X] Rotas
 - [ ] Funcionalidade
 ### Engenharia de Produção
-- [X] JIT JIC --> Nível de aderência as metodologias
 - [X] Takt Time --> Calculadora TaktTime simples
+- [X] JIT JIC --> Nível de aderência as metodologias
 - [X] OEE --> Overall Equipment Effectiveness - Cálculo de Eficiência
-- [ ] GBO --> Gráfico de Balanceamento Operacional
+- [X] GBO --> Gráfico de Balanceamento Operacional
+- [X] TRF --> Troca Rápida de Ferramenta
 ### Qualidade
-- [ ] Gráfico de Pareto --> Análise 80/20
+- [X] Gráfico de Pareto --> Análise 80/20
 - [ ] Plano de Ação --> 5w2h
 - [ ] Gráfico Correlação --> Relação entre duas variáveis
+### Financeiro
+- [ ] ROI - Retorno Sobre Investimento
