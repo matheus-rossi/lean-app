@@ -87,16 +87,17 @@ export default {
       },
       columns: [
         {
-          name: 'centroTrabalho',
-          label: 'Centro Trabalho',
-          field: 'processId',
+          name: 'centrodetrabalho',
+          label: 'Centro de Trabalho',
+          field: 'processName',
           align: 'left',
           sortable: true
         },
         {
           name: 'operacao',
           label: 'Operação',
-          field: 'processName',
+          field: 'processId',
+          align: 'left',
           sortable: true
         },
         {
