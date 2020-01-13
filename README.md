@@ -15,6 +15,7 @@
 - [X] OEE --> Overall Equipment Effectiveness - Cálculo de Eficiência
 - [X] GBO --> Gráfico de Balanceamento Operacional
 - [X] TRF --> Troca Rápida de Ferramenta
+- [ ] GPT --> Gestão de Posto de Trabalho
 ### Qualidade
 - [X] Gráfico de Pareto --> Análise 80/20
 - [ ] Plano de Ação --> 5w2h
