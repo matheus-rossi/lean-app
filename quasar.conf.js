@@ -57,6 +57,7 @@ module.exports = function (ctx) {
         'QToolbar',
         'QToolbarTitle',
         'QTable',
+        'QTime',
         'QTh',
         'QTr',
         'QTd',
@@ -67,7 +68,8 @@ module.exports = function (ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QPopupProxy'
       ],
 
       directives: [
