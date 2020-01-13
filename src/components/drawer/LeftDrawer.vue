@@ -23,16 +23,22 @@
             <q-item-label caption>Gráfico de Balanceamento Operacional</q-item-label>
           </q-item-section>
         </q-item>
-        <q-item clickable v-ripple to="/app/oee">
-          <q-item-section>
-            <q-item-label>OEE</q-item-label>
-            <q-item-label caption>Calculo de Eficiência</q-item-label>
-          </q-item-section>
-        </q-item>
         <q-item clickable v-ripple to="/app/trf">
           <q-item-section>
             <q-item-label>TRF</q-item-label>
             <q-item-label caption>Troca Rápida de Ferramenta</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple to="/app/gpt">
+          <q-item-section>
+            <q-item-label>GPT</q-item-label>
+            <q-item-label caption>Gestão do Posto de Trabalho</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable v-ripple to="/app/oee">
+          <q-item-section>
+            <q-item-label>OEE</q-item-label>
+            <q-item-label caption>Calculo de Eficiência</q-item-label>
           </q-item-section>
         </q-item>
         <q-item clickable v-ripple to="/app/jicjit">

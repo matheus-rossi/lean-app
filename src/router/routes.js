@@ -13,6 +13,7 @@ const routes = [
       { path: 'obc', component: () => import('pages/obc/Obc.vue') },
       { path: 'pareto', component: () => import('pages/pareto/Pareto.vue') },
       { path: 'shingo', component: () => import('pages/shingo/Shingo.vue') },
+      { path: 'gpt', component: () => import('pages/gpt/Gpt.vue') },
       { path: 'trf', component: () => import('pages/trf/Trf.vue') }
     ]
   },
