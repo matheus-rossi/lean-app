@@ -14,7 +14,8 @@ const routes = [
       { path: 'pareto', component: () => import('pages/pareto/Pareto.vue') },
       { path: 'shingo', component: () => import('pages/shingo/Shingo.vue') },
       { path: 'gpt', component: () => import('pages/gpt/Gpt.vue') },
-      { path: 'trf', component: () => import('pages/trf/Trf.vue') }
+      { path: 'trf', component: () => import('pages/trf/Trf.vue') },
+      { path: 'it', component: () => import('pages/it/It.vue') }
     ]
   },
   {

@@ -52,8 +52,7 @@
       <q-expansion-item
         expand-separator
         icon="poll"
-        label="Qualidade"
-      >
+        label="Qualidade">
         <q-item clickable v-ripple to="/app/pareto">
           <q-item-section>
             <q-item-label>Análise de Pareto</q-item-label>
@@ -76,12 +75,22 @@
       <q-expansion-item
         expand-separator
         icon="attach_money"
-        label="Financeiro"
-      >
+        label="Financeiro">
         <q-item clickable v-ripple>
           <q-item-section>
             <q-item-label>ROI</q-item-label>
             <q-item-label caption>Retorno sobre o investimento</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-expansion-item>
+      <q-expansion-item
+        expand-separator
+        icon="post_add"
+        label="Instruções Trabalho">
+        <q-item clickable v-ripple to="/app/it">
+          <q-item-section>
+            <q-item-label>IT</q-item-label>
+            <q-item-label caption>Instruções de Trabalho</q-item-label>
           </q-item-section>
         </q-item>
       </q-expansion-item>
