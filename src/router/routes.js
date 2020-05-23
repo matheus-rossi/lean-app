@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/login',
-    component: () => import('pages/login.vue')
+    component: () => import('pages/Login.vue')
   },
   {
     path: '/app',
@@ -23,7 +23,7 @@ const routes = [
   }
 ]
 
-// QUando implementar sistema de login, utilizar a metodologia abaixo para controle de rotas.
+// Quando implementar sistema de login, utilizar a metodologia abaixo para controle de rotas.
 
 // router.beforeEach((to, from, next) => {
 //   if (to.path !== '/login') {
