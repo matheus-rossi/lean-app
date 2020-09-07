@@ -34,13 +34,14 @@
                 <q-btn dense flat icon="close" v-close-popup> 
                   Fechar
                 </q-btn>
-              </q-bar>
+              </q-bar>  
               <iframe 
-                :src="this.link" 
-                frameborder="0"
+                :src="this.link"  
+                type="application/pdf" 
                 class="iframe-height full-width"
+                framborder='0'
               >
-              </iframe>       
+              </iframe>         
             </q-card>
           </q-dialog>
         </div>
