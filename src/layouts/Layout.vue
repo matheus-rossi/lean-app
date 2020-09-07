@@ -6,7 +6,7 @@
         <q-btn dense flat round icon="menu" @click="left = !left" />
 
         <q-toolbar-title>
-          Lean App
+          Lean App - 0.1
         </q-toolbar-title>
 
         <q-btn dense flat round icon="timer" @click="taktTimePopUp = !taktTimePopUp" />
