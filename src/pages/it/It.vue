@@ -40,7 +40,7 @@
                 frameborder="0"
                 class="iframe-height full-width"
               >
-              </iframe>                
+              </iframe>       
             </q-card>
           </q-dialog>
         </div>
@@ -62,7 +62,8 @@ export default {
   },
   methods: {
     openPdf(item) {
-      this.link = item.concat('.pdf')
+      const baselink = 'https://leanapp.com.br/'
+      this.link = baselink.concat(item).concat('.pdf')
       this.dialog = true
     }
   }
