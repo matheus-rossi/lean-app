@@ -39,7 +39,8 @@
                 :src="this.link"  
                 type="application/pdf" 
                 class="iframe-height full-width"
-                framborder='0'
+                framborder="0"
+                scrolling="no"
               >
               </iframe>         
             </q-card>
