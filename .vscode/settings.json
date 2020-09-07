@@ -1,0 +1,8 @@
+{
+  "vetur.format.enable": false,
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
+  
+  "vetur.experimental.templateInterpolationService": true,
+  "totvsLanguageServer.welcomePage": false,
+  "eslint.enable": true
+}
