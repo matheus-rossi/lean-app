@@ -28,22 +28,7 @@
             transition-show="slide-up"
             transition-hide="slide-down"
           >
-            <q-card>
-              <q-bar class="bg-primary text-white">
-                <q-space />
-                <q-btn dense flat icon="close" v-close-popup> 
-                  Fechar
-                </q-btn>
-              </q-bar>  
-              <iframe 
-                :src="this.link"  
-                type="application/pdf" 
-                class="iframe-height full-width"
-                framborder="0"
-                scrolling="no"
-              >
-              </iframe>         
-            </q-card>
+          <pdfRender :pdfLink="this.link"></pdfRender>
           </q-dialog>
         </div>
       </q-card-section>
@@ -52,6 +37,8 @@
 </template>
 
 <script>
+import pdfRender from '../../components/pdfRender/pdfRender.vue'
+
 export default {
   data () {
     return {
@@ -67,8 +54,11 @@ export default {
       const baselink = 'https://leanapp.com.br/'
       this.link = baselink.concat(item).concat('.pdf')
       this.dialog = true
-    }
-  }
+      }
+  },
+  components: {
+    pdfRender
+  },
 }
 </script>
 
