@@ -178,12 +178,13 @@ export default {
         return prevElm + elm.operationTime
       }, 0)
       const timeCouldBeExternalActivities = this.setupList.filter((elm) => {
-        return elm.idCouldBeExternal === '1' && elm.idSetupClass === '1'
+        return elm.idCouldBeExternal === 1 && elm.idSetupClass === 1
       }).reduce((prevElm, elm) => {
         return prevElm + elm.operationTime
       }, 0)
+      console.log(this.setupList,timeCouldBeExternalActivities)
       this.gainPercent = Math.round((timeCouldBeExternalActivities / totalTime) * 100)
-      this.gainMin = totalTime - timeCouldBeExternalActivities
+      this.gainMin = timeCouldBeExternalActivities
       this.showTrf = true
     },
     cleanData () {

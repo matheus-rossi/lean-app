@@ -13,7 +13,7 @@
         </q-input>
         / {{numPages}}
         <q-btn 
-          @click="rotate += 90" 
+          @click="changeRotation" 
           icon="rotate_right"
           dense 
           flat
@@ -31,7 +31,6 @@
           :page="page" 
           :rotate="rotate" 
           @progress="loadedRatio = $event" 
-          @error="error" 
           @num-pages="numPages = $event" 
           @link-clicked="page = $event">
         </pdf>
@@ -60,12 +59,8 @@ export default {
     }
   },
   methods: {
-    password: function(updatePassword, reason) {
-      updatePassword(prompt('password is "test"'))
-      console.log(reason)
-    },
-    error: function(err) {
-      console.log(err)
+    changeRotation () {
+      this.rotate += 90
     }
   }
 }
