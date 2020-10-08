@@ -68,6 +68,17 @@
       </q-expansion-item>
       <q-expansion-item
         expand-separator
+        icon="business"
+        label="ERP">
+        <q-item clickable v-ripple>
+          <q-item-section>
+            <q-item-label>CMS</q-item-label>
+            <q-item-label caption>Capacity Management System</q-item-label>
+          </q-item-section>
+        </q-item>
+      </q-expansion-item>
+      <q-expansion-item
+        expand-separator
         icon="attach_money"
         label="Financeiro">
         <q-item clickable v-ripple>
