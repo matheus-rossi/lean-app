@@ -70,7 +70,7 @@
         expand-separator
         icon="business"
         label="ERP">
-        <q-item clickable v-ripple>
+        <q-item clickable v-ripple to="app/erp/production">
           <q-item-section>
             <q-item-label>CMS</q-item-label>
             <q-item-label caption>Capacity Management System</q-item-label>

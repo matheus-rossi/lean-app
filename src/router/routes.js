@@ -14,7 +14,17 @@ const routes = [
       { path: 'shingo', component: () => import('pages/shingo/Shingo.vue') },
       { path: 'gpt', component: () => import('pages/gpt/Gpt.vue') },
       { path: 'trf', component: () => import('pages/trf/Trf.vue') },
-      { path: 'it', component: () => import('pages/it/It.vue') }
+      { path: 'it', component: () => import('pages/it/It.vue') },
+      { 
+        path: 'erp',
+        component: () => import('pages/erp/Index.vue'),
+        children: [ 
+          { 
+            path: 'production', 
+            component: () => import('pages/erp/production/Production.vue')
+          }
+        ]
+      }
     ]
   },
   {

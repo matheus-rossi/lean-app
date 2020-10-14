@@ -4,5 +4,6 @@
   
   "vetur.experimental.templateInterpolationService": true,
   "totvsLanguageServer.welcomePage": false,
-  "eslint.enable": true
+  "eslint.enable": true,
+  "files.autoGuessEncoding": true
 }
